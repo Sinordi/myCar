@@ -9,23 +9,59 @@
 /* Begin PBXBuildFile section */
 		D881B44026F874850048ADE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B43F26F874850048ADE9 /* AppDelegate.swift */; };
 		D881B44226F874850048ADE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B44126F874850048ADE9 /* SceneDelegate.swift */; };
-		D881B44426F874850048ADE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B44326F874850048ADE9 /* ViewController.swift */; };
+		D881B44426F874850048ADE9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B44326F874850048ADE9 /* MainViewController.swift */; };
 		D881B44726F874850048ADE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D881B44526F874850048ADE9 /* Main.storyboard */; };
 		D881B44A26F874850048ADE9 /* myCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D881B44826F874850048ADE9 /* myCar.xcdatamodeld */; };
 		D881B44C26F874860048ADE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D881B44B26F874860048ADE9 /* Assets.xcassets */; };
 		D881B44F26F874860048ADE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D881B44D26F874860048ADE9 /* LaunchScreen.storyboard */; };
+		D881B45D26F877280048ADE9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B45C26F877280048ADE9 /* MainPresenter.swift */; };
+		D881B45F26F8773A0048ADE9 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B45E26F8773A0048ADE9 /* MainInteractor.swift */; };
+		D881B46126F8774E0048ADE9 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46026F8774E0048ADE9 /* MainConfigurator.swift */; };
+		D881B46326F877590048ADE9 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46226F877590048ADE9 /* MainRouter.swift */; };
+		D881B46526F877650048ADE9 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46426F877650048ADE9 /* MainProtocols.swift */; };
+		D881B46826F8987C0048ADE9 /* NewCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46726F8987C0048ADE9 /* NewCarController.swift */; };
+		D881B46A26F8988A0048ADE9 /* NewCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46926F8988A0048ADE9 /* NewCarPresenter.swift */; };
+		D881B46C26F898970048ADE9 /* NewCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46B26F898970048ADE9 /* NewCarInteractor.swift */; };
+		D881B46E26F898A80048ADE9 /* NewCarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */; };
+		D881B47026F898B40048ADE9 /* NewCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46F26F898B40048ADE9 /* NewCarRouter.swift */; };
+		D881B47226F898C20048ADE9 /* NewCarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47126F898C20048ADE9 /* NewCarProtocols.swift */; };
+		D881B47426F89D270048ADE9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47326F89D270048ADE9 /* DataManager.swift */; };
+		D881B47726F8C6880048ADE9 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47626F8C6880048ADE9 /* GarageViewController.swift */; };
+		D881B47926F8C6930048ADE9 /* GaragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47826F8C6930048ADE9 /* GaragePresenter.swift */; };
+		D881B47B26F8C6A20048ADE9 /* GarageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47A26F8C6A20048ADE9 /* GarageInteractor.swift */; };
+		D881B47D26F8C6AD0048ADE9 /* GarageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47C26F8C6AD0048ADE9 /* GarageConfigurator.swift */; };
+		D881B47F26F8C6B70048ADE9 /* GarageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47E26F8C6B70048ADE9 /* GarageRouter.swift */; };
+		D881B48126F8C6C60048ADE9 /* GarageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B48026F8C6C60048ADE9 /* GarageProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D881B43C26F874850048ADE9 /* myCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D881B43F26F874850048ADE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D881B44126F874850048ADE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D881B44326F874850048ADE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D881B44326F874850048ADE9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D881B44626F874850048ADE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D881B44926F874850048ADE9 /* myCar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCar.xcdatamodel; sourceTree = "<group>"; };
 		D881B44B26F874860048ADE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D881B44E26F874860048ADE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D881B45026F874860048ADE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D881B45C26F877280048ADE9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		D881B45E26F8773A0048ADE9 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		D881B46026F8774E0048ADE9 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		D881B46226F877590048ADE9 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		D881B46426F877650048ADE9 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
+		D881B46726F8987C0048ADE9 /* NewCarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarController.swift; sourceTree = "<group>"; };
+		D881B46926F8988A0048ADE9 /* NewCarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarPresenter.swift; sourceTree = "<group>"; };
+		D881B46B26F898970048ADE9 /* NewCarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarInteractor.swift; sourceTree = "<group>"; };
+		D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarConfigurator.swift; sourceTree = "<group>"; };
+		D881B46F26F898B40048ADE9 /* NewCarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarRouter.swift; sourceTree = "<group>"; };
+		D881B47126F898C20048ADE9 /* NewCarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarProtocols.swift; sourceTree = "<group>"; };
+		D881B47326F89D270048ADE9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D881B47626F8C6880048ADE9 /* GarageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
+		D881B47826F8C6930048ADE9 /* GaragePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePresenter.swift; sourceTree = "<group>"; };
+		D881B47A26F8C6A20048ADE9 /* GarageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageInteractor.swift; sourceTree = "<group>"; };
+		D881B47C26F8C6AD0048ADE9 /* GarageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageConfigurator.swift; sourceTree = "<group>"; };
+		D881B47E26F8C6B70048ADE9 /* GarageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageRouter.swift; sourceTree = "<group>"; };
+		D881B48026F8C6C60048ADE9 /* GarageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +96,96 @@
 			children = (
 				D881B43F26F874850048ADE9 /* AppDelegate.swift */,
 				D881B44126F874850048ADE9 /* SceneDelegate.swift */,
-				D881B44326F874850048ADE9 /* ViewController.swift */,
-				D881B44526F874850048ADE9 /* Main.storyboard */,
+				D881B47326F89D270048ADE9 /* DataManager.swift */,
+				D881B45626F874BC0048ADE9 /* Modules */,
+				D881B45726F875070048ADE9 /* Entities */,
+				D881B45826F8751E0048ADE9 /* Services */,
+				D881B45926F875290048ADE9 /* Views */,
+				D881B45A26F875340048ADE9 /* Storyboards */,
 				D881B44B26F874860048ADE9 /* Assets.xcassets */,
-				D881B44D26F874860048ADE9 /* LaunchScreen.storyboard */,
 				D881B45026F874860048ADE9 /* Info.plist */,
 				D881B44826F874850048ADE9 /* myCar.xcdatamodeld */,
 			);
 			path = myCar;
+			sourceTree = "<group>";
+		};
+		D881B45626F874BC0048ADE9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D881B45B26F875E30048ADE9 /* Main */,
+				D881B47526F8C6530048ADE9 /* Garage */,
+				D881B46626F898530048ADE9 /* NewCar */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		D881B45726F875070048ADE9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		D881B45826F8751E0048ADE9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		D881B45926F875290048ADE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D881B45A26F875340048ADE9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D881B44526F874850048ADE9 /* Main.storyboard */,
+				D881B44D26F874860048ADE9 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D881B45B26F875E30048ADE9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D881B44326F874850048ADE9 /* MainViewController.swift */,
+				D881B45C26F877280048ADE9 /* MainPresenter.swift */,
+				D881B45E26F8773A0048ADE9 /* MainInteractor.swift */,
+				D881B46026F8774E0048ADE9 /* MainConfigurator.swift */,
+				D881B46226F877590048ADE9 /* MainRouter.swift */,
+				D881B46426F877650048ADE9 /* MainProtocols.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		D881B46626F898530048ADE9 /* NewCar */ = {
+			isa = PBXGroup;
+			children = (
+				D881B46726F8987C0048ADE9 /* NewCarController.swift */,
+				D881B46926F8988A0048ADE9 /* NewCarPresenter.swift */,
+				D881B46B26F898970048ADE9 /* NewCarInteractor.swift */,
+				D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */,
+				D881B46F26F898B40048ADE9 /* NewCarRouter.swift */,
+				D881B47126F898C20048ADE9 /* NewCarProtocols.swift */,
+			);
+			name = NewCar;
+			sourceTree = "<group>";
+		};
+		D881B47526F8C6530048ADE9 /* Garage */ = {
+			isa = PBXGroup;
+			children = (
+				D881B47626F8C6880048ADE9 /* GarageViewController.swift */,
+				D881B47826F8C6930048ADE9 /* GaragePresenter.swift */,
+				D881B47A26F8C6A20048ADE9 /* GarageInteractor.swift */,
+				D881B47C26F8C6AD0048ADE9 /* GarageConfigurator.swift */,
+				D881B47E26F8C6B70048ADE9 /* GarageRouter.swift */,
+				D881B48026F8C6C60048ADE9 /* GarageProtocols.swift */,
+			);
+			name = Garage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,10 +258,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D881B44426F874850048ADE9 /* ViewController.swift in Sources */,
+				D881B47226F898C20048ADE9 /* NewCarProtocols.swift in Sources */,
+				D881B47426F89D270048ADE9 /* DataManager.swift in Sources */,
+				D881B47F26F8C6B70048ADE9 /* GarageRouter.swift in Sources */,
+				D881B45D26F877280048ADE9 /* MainPresenter.swift in Sources */,
+				D881B47026F898B40048ADE9 /* NewCarRouter.swift in Sources */,
+				D881B46326F877590048ADE9 /* MainRouter.swift in Sources */,
+				D881B47926F8C6930048ADE9 /* GaragePresenter.swift in Sources */,
+				D881B47B26F8C6A20048ADE9 /* GarageInteractor.swift in Sources */,
+				D881B46526F877650048ADE9 /* MainProtocols.swift in Sources */,
+				D881B46826F8987C0048ADE9 /* NewCarController.swift in Sources */,
+				D881B46C26F898970048ADE9 /* NewCarInteractor.swift in Sources */,
+				D881B44426F874850048ADE9 /* MainViewController.swift in Sources */,
+				D881B47726F8C6880048ADE9 /* GarageViewController.swift in Sources */,
+				D881B46E26F898A80048ADE9 /* NewCarConfigurator.swift in Sources */,
+				D881B47D26F8C6AD0048ADE9 /* GarageConfigurator.swift in Sources */,
 				D881B44026F874850048ADE9 /* AppDelegate.swift in Sources */,
+				D881B46A26F8988A0048ADE9 /* NewCarPresenter.swift in Sources */,
 				D881B44A26F874850048ADE9 /* myCar.xcdatamodeld in Sources */,
+				D881B48126F8C6C60048ADE9 /* GarageProtocols.swift in Sources */,
+				D881B46126F8774E0048ADE9 /* MainConfigurator.swift in Sources */,
 				D881B44226F874850048ADE9 /* SceneDelegate.swift in Sources */,
+				D881B45F26F8773A0048ADE9 /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WB2637P65;
 				INFOPLIST_FILE = myCar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WB2637P65;
 				INFOPLIST_FILE = myCar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
