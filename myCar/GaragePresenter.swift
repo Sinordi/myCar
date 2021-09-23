@@ -8,24 +8,48 @@
 import Foundation
 
 
-class GaragePresenter: GaragePresenterProtocol {
+class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteractorDelegate {
+
+    
+    
+   
     
 
-    weak var view: GarageViewProtocol!
-    var interactor: GarageInteractorProtocol!
-    var router: GarageRouterProtocol!
+    private weak var view: GarageViewInput!
+    private let interactor: GarageInteractorInput
+    private let router: GarageRouterInput
     
-    init(view: GarageViewProtocol) {
+    init(view: GarageViewInput, interactor: GarageInteractorInput, router: GarageRouterInput) {
         self.view = view
+        self.interactor = interactor
+        self.router = router
     }
     
-    func configureView() {
-        
+    func viewIsReady() {
+        interactor.loadCarArray()
+        guard let carArray = interactor.carArray else {return}
+        self.view.getCarArray(carArray: carArray)
+        var carBrandArray: [String] = []
+        for index in 0..<carArray.count {
+            carBrandArray.append(carArray[index].carBrand ?? "")
+        }
+        self.view?.getCarArrayString(carArrayString: carBrandArray)
     }
+
     
     func addNewCarButtonClicked() {
         router.showNewCarViewController()
     }
+    
+    func removeCarFromGarageClicked(with indexPath: IndexPath) {
+        interactor.deliteCarFromGarage(with: indexPath)
+    }
+    
+    func updateCarArrayInMainView(with carArray: [String]) {
+        router.updateCarArrayInMainView(with: carArray)
+    }
+    
+    
     
     
 }

@@ -8,26 +8,44 @@
 import Foundation
 
 
-protocol MainViewProtocol: AnyObject {
+protocol MainViewInput: AnyObject {
+    func setMainCarOnMainView(auto: Auto)
+    func getCarArray(carArray: [Auto])
+    func getCarArrayString(carArray: [String])
+    
+//    func creatingSegmentedControl(wift array: [String])
+}
+
+protocol MainViewDelegate: AnyObject { //outPut
+    func viewIsReady()
+    func carMileageDidChange(carMileage: Int32)
+    func deliteFirstCarButtonClicked()
+}
+
+protocol MainPresenterInput: AnyObject {
     
 }
 
-protocol MainPresenterProtocol: AnyObject {
-    var router: MainRouterProtocol! {get set}
-    func configureView()
+
+
+protocol MainInteractorInput: AnyObject {
+    
+    var carArray: [Auto]? {get}
+    var mainCar: Auto? {get set}
+    func carMileageChange(carMileage: Int32)
+    func loadMainCarItem()
+    func deliteFirstCar()
+}
+
+protocol MainInteractorDelegate: AnyObject {
     
 }
 
 
-protocol MainInteractorProtocol: AnyObject {
-
-}
-
-
-protocol MainRouterProtocol: AnyObject {
+protocol MainRouterInput: AnyObject {
     
 }
 
-protocol MainConfiguratorProtocol: AnyObject {
+protocol MainConfiguratorInput: AnyObject {
     func configure(with viewController: MainViewController)
 }

@@ -8,26 +8,40 @@
 import Foundation
 
 
-protocol GarageViewProtocol: AnyObject {
+protocol GarageViewInput: AnyObject {
+    func getCarArray(carArray: [Auto])
+    func getCarArrayString(carArrayString: [String])
+}
+
+protocol GarageViewDelegate: AnyObject {
+    func viewIsReady()
     
 }
 
-protocol GaragePresenterProtocol: AnyObject {
-    var router: GarageRouterProtocol! {get set}
-    func configureView()
+protocol GaragePresenterInput: AnyObject {
     func addNewCarButtonClicked()
+    func removeCarFromGarageClicked(with indexPath: IndexPath)
+    func updateCarArrayInMainView(with carArray: [String])
 }
 
 
-protocol GarageInteractorProtocol: AnyObject {
 
+protocol GarageInteractorInput: AnyObject {
+    var carArray: [Auto]? {get}
+    func loadCarArray()
+    func deliteCarFromGarage(with indexPath: IndexPath)
+}
+
+protocol GarageInteractorDelegate: AnyObject {
+    
 }
 
 
-protocol GarageRouterProtocol: AnyObject {
+protocol GarageRouterInput: AnyObject {
     func showNewCarViewController()
+    func updateCarArrayInMainView(with carArray: [String])
 }
 
-protocol GarageConfiguratorProtocol: AnyObject {
+protocol GarageConfiguratorInput: AnyObject {
     func configure(with viewController: GarageViewController)
 }

@@ -8,18 +8,19 @@
 import Foundation
 
 
-class MainConfigurator: MainConfiguratorProtocol {
+class MainConfigurator {
+    
     
     
     func configure(with viewController: MainViewController) {
-        let presenter = MainPresenter(view: viewController)
-        let interactor = MainInteractor(presenter: presenter)
         let router = MainRouter(viewController: viewController)
-        let dataManager = DataManagerImplementation()
-        
+        let interactor = MainInteractor(dataManager: DataManagerImplementation(), coreDataService: CoreDataService())
+        let presenter = MainPresenter(view: viewController, interactor: interactor, router: router)
+            
         viewController.presenter = presenter
-        presenter.interactor = interactor
-        presenter.router = router
+        viewController.delegate = presenter
+        interactor.delegate = presenter
+
     }
     
     

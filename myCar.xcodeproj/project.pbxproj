@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8015D4426FAF84600B0FC9E /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4326FAF84600B0FC9E /* CoreDataService.swift */; };
+		D8015D4626FAFD7D00B0FC9E /* MainAuto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */; };
+		D8015D4826FB193A00B0FC9E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4726FB193A00B0FC9E /* Service.swift */; };
+		D87FC88926FC6CC600D6533A /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */; };
+		D87FC88A26FC6CC600D6533A /* GarageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */; };
 		D881B44026F874850048ADE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B43F26F874850048ADE9 /* AppDelegate.swift */; };
 		D881B44226F874850048ADE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B44126F874850048ADE9 /* SceneDelegate.swift */; };
 		D881B44426F874850048ADE9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B44326F874850048ADE9 /* MainViewController.swift */; };
 		D881B44726F874850048ADE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D881B44526F874850048ADE9 /* Main.storyboard */; };
-		D881B44A26F874850048ADE9 /* myCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D881B44826F874850048ADE9 /* myCar.xcdatamodeld */; };
+		D881B44A26F874850048ADE9 /* AutoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D881B44826F874850048ADE9 /* AutoDataModel.xcdatamodeld */; };
 		D881B44C26F874860048ADE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D881B44B26F874860048ADE9 /* Assets.xcassets */; };
 		D881B44F26F874860048ADE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D881B44D26F874860048ADE9 /* LaunchScreen.storyboard */; };
 		D881B45D26F877280048ADE9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B45C26F877280048ADE9 /* MainPresenter.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8015D4326FAF84600B0FC9E /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuto.swift; sourceTree = "<group>"; };
+		D8015D4726FB193A00B0FC9E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewCell.swift; sourceTree = "<group>"; };
+		D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GarageTableViewCell.xib; sourceTree = "<group>"; };
 		D881B43C26F874850048ADE9 /* myCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D881B43F26F874850048ADE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D881B44126F874850048ADE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D87FC88626FC6BD500D6533A /* GarageViews */ = {
+			isa = PBXGroup;
+			children = (
+				D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */,
+				D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */,
+			);
+			name = GarageViews;
+			sourceTree = "<group>";
+		};
 		D881B43326F874850048ADE9 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +123,6 @@
 				D881B45A26F875340048ADE9 /* Storyboards */,
 				D881B44B26F874860048ADE9 /* Assets.xcassets */,
 				D881B45026F874860048ADE9 /* Info.plist */,
-				D881B44826F874850048ADE9 /* myCar.xcdatamodeld */,
 			);
 			path = myCar;
 			sourceTree = "<group>";
@@ -122,6 +140,7 @@
 		D881B45726F875070048ADE9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -129,6 +148,9 @@
 		D881B45826F8751E0048ADE9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D8015D4326FAF84600B0FC9E /* CoreDataService.swift */,
+				D8015D4726FB193A00B0FC9E /* Service.swift */,
+				D881B44826F874850048ADE9 /* AutoDataModel.xcdatamodeld */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -136,6 +158,7 @@
 		D881B45926F875290048ADE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D87FC88626FC6BD500D6533A /* GarageViews */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,6 +270,7 @@
 			files = (
 				D881B44F26F874860048ADE9 /* LaunchScreen.storyboard in Resources */,
 				D881B44C26F874860048ADE9 /* Assets.xcassets in Resources */,
+				D87FC88A26FC6CC600D6533A /* GarageTableViewCell.xib in Resources */,
 				D881B44726F874850048ADE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,9 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D881B47226F898C20048ADE9 /* NewCarProtocols.swift in Sources */,
+				D8015D4826FB193A00B0FC9E /* Service.swift in Sources */,
 				D881B47426F89D270048ADE9 /* DataManager.swift in Sources */,
+				D8015D4626FAFD7D00B0FC9E /* MainAuto.swift in Sources */,
 				D881B47F26F8C6B70048ADE9 /* GarageRouter.swift in Sources */,
 				D881B45D26F877280048ADE9 /* MainPresenter.swift in Sources */,
+				D8015D4426FAF84600B0FC9E /* CoreDataService.swift in Sources */,
 				D881B47026F898B40048ADE9 /* NewCarRouter.swift in Sources */,
 				D881B46326F877590048ADE9 /* MainRouter.swift in Sources */,
 				D881B47926F8C6930048ADE9 /* GaragePresenter.swift in Sources */,
@@ -269,13 +296,14 @@
 				D881B46526F877650048ADE9 /* MainProtocols.swift in Sources */,
 				D881B46826F8987C0048ADE9 /* NewCarController.swift in Sources */,
 				D881B46C26F898970048ADE9 /* NewCarInteractor.swift in Sources */,
+				D87FC88926FC6CC600D6533A /* GarageTableViewCell.swift in Sources */,
 				D881B44426F874850048ADE9 /* MainViewController.swift in Sources */,
 				D881B47726F8C6880048ADE9 /* GarageViewController.swift in Sources */,
 				D881B46E26F898A80048ADE9 /* NewCarConfigurator.swift in Sources */,
 				D881B47D26F8C6AD0048ADE9 /* GarageConfigurator.swift in Sources */,
 				D881B44026F874850048ADE9 /* AppDelegate.swift in Sources */,
 				D881B46A26F8988A0048ADE9 /* NewCarPresenter.swift in Sources */,
-				D881B44A26F874850048ADE9 /* myCar.xcdatamodeld in Sources */,
+				D881B44A26F874850048ADE9 /* AutoDataModel.xcdatamodeld in Sources */,
 				D881B48126F8C6C60048ADE9 /* GarageProtocols.swift in Sources */,
 				D881B46126F8774E0048ADE9 /* MainConfigurator.swift in Sources */,
 				D881B44226F874850048ADE9 /* SceneDelegate.swift in Sources */,
@@ -485,13 +513,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D881B44826F874850048ADE9 /* myCar.xcdatamodeld */ = {
+		D881B44826F874850048ADE9 /* AutoDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				D881B44926F874850048ADE9 /* myCar.xcdatamodel */,
 			);
 			currentVersion = D881B44926F874850048ADE9 /* myCar.xcdatamodel */;
-			path = myCar.xcdatamodeld;
+			path = AutoDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

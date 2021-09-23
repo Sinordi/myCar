@@ -8,19 +8,20 @@
 import Foundation
 
 
-class NewCarConfigurator: NewCarConfiguratorProtocol {
+class NewCarConfigurator: NewCarConfiguratorInput {
     
     
     func configure(with viewController: NewCarViewController) {
-        let presenter = NewCarPresenter(view: viewController)
-        let interactor = NewCarInteractor(presenter: presenter)
+        
+        let interactor = NewCarInteractor(dataManager: DataManagerImplementation(), coreDataService: CoreDataService())
         let router = NewCarRouter(viewController: viewController)
-        let dataManager = DataManagerImplementation()
+        let presenter = NewCarPresenter(view: viewController, interactor: interactor, router: router)
+
         
         viewController.presenter = presenter
-        presenter.interactor = interactor
-        presenter.router = router
-        interactor.dataManager = dataManager
+        viewController.delegate = presenter
+        interactor.delegate = presenter
+
     }
     
     

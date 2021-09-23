@@ -9,7 +9,7 @@ import Foundation
 
 
 
-class NewCarRouter: NewCarRouterProtocol {
+class NewCarRouter: NewCarRouterInput {
 
     weak var viewController: NewCarViewController!
     

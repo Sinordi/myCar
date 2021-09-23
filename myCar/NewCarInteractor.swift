@@ -8,14 +8,17 @@
 import Foundation
 
 
-class NewCarInteractor: NewCarInteractorProtocol {
+class NewCarInteractor: NewCarInteractorInput {
+
     
-    weak var presenter: NewCarPresenterProtocol!
-    var dataManager: DataManager!
     
-  
-    init(presenter: NewCarPresenterProtocol) {
-        self.presenter = presenter
+    weak var delegate: NewCarInteractorDelegate?
+    private let dataManager: DataManager
+    private let coreDataService: CoreDataService
+    
+    init(dataManager: DataManager, coreDataService: CoreDataService) {
+        self.dataManager = dataManager
+        self.coreDataService = coreDataService
     }
     
 
@@ -23,5 +26,9 @@ class NewCarInteractor: NewCarInteractorProtocol {
         
         let cars = dataManager.obtainMarksOfCars()
         return cars
+    }
+    
+    func addNewCar(carBrand: String, carModel: String, carType: String?, carGeneration: String?, carMileage: Int32) {
+        coreDataService.saveNewCarItem(with: MainAuto(carBrand: carBrand, carModel: carModel, generation: carGeneration, trim: carType, carMileage: carMileage))
     }
 }

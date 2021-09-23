@@ -8,12 +8,33 @@
 import Foundation
 
 
-class GarageInteractor: GarageInteractorProtocol {
+class GarageInteractor: GarageInteractorInput {
     
-    weak var presenter: GaragePresenterProtocol!
+
+    
+      
+    private let coreDataService: CoreDataService
+    weak var delegate: GarageInteractorDelegate?
     
   
-    init(presenter: GaragePresenterProtocol) {
-        self.presenter = presenter
+    init(coreDataService: CoreDataService) {
+        self.coreDataService = coreDataService
+    }
+    
+    
+    var carArray: [Auto]? {
+        get {
+            return coreDataService.carItemArray
+        }
+    }
+    
+    
+    func loadCarArray() {
+        coreDataService.loadAuto()
+    }
+    
+    
+    func deliteCarFromGarage(with indexPath: IndexPath) {
+        coreDataService.removingCarWithIndex(with: indexPath)
     }
 }

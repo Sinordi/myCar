@@ -8,7 +8,7 @@
 import Foundation
 
 
-class MainRouter: MainRouterProtocol {
+class MainRouter: MainRouterInput {
 
     weak var viewController: MainViewController!
     

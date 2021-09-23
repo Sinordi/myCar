@@ -8,12 +8,48 @@
 import Foundation
 
 
-class MainInteractor: MainInteractorProtocol {
+class MainInteractor: MainInteractorInput {
+
+
+    private var actualValue2: Auto?
     
-    weak var presenter: MainPresenterProtocol!
+    var mainCar: Auto? {
+        set {
+             actualValue2 = newValue
+        }
+        get {
+            return coreDataService.carItemArray.first
+        }
+    }
+    
+    var carArray: [Auto]? {
+        get {
+            return coreDataService.carItemArray
+        }
+    }
+    
+    weak var delegate: MainInteractorDelegate?
+    private let dataManager: DataManager
+    private let coreDataService: CoreDataService
     
   
-    init(presenter: MainPresenterProtocol) {
-        self.presenter = presenter
+    init(dataManager: DataManager, coreDataService: CoreDataService) {
+        self.dataManager = dataManager
+        self.coreDataService = coreDataService
+
     }
+    
+    func loadMainCarItem() {
+        coreDataService.loadAuto()
+    }
+    
+    func deliteFirstCar() {
+        coreDataService.removingAllCarsFromCoreData()
+    }
+    
+    
+    func carMileageChange(carMileage: Int32) {
+        mainCar?.carMileage = carMileage
+    }
+    
 }
