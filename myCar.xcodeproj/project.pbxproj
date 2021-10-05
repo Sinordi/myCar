@@ -121,6 +121,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D820808F270C8E0500D03B92 /* Garage */ = {
+			isa = PBXGroup;
+			children = (
+				D820808A270C8B8000D03B92 /* GarageViewController.swift */,
+				D8208084270C8B5E00D03B92 /* GaragePresenter.swift */,
+				D8208083270C8B5E00D03B92 /* GarageInteractor.swift */,
+				D8208082270C8B5E00D03B92 /* GarageConfigurator.swift */,
+				D8208085270C8B5E00D03B92 /* GarageRouter.swift */,
+			);
+			path = Garage;
+			sourceTree = "<group>";
+		};
 		D87FC88626FC6BD500D6533A /* GarageViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D820807F270C89A100D03B92 /* Main */,
-				D881B47526F8C6530048ADE9 /* Garage */,
+				D820808F270C8E0500D03B92 /* Garage */,
 				D8208081270C89DF00D03B92 /* NewCar */,
 			);
 			name = Modules;
@@ -188,18 +200,6 @@
 				D881B44D26F874860048ADE9 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
-			sourceTree = "<group>";
-		};
-		D881B47526F8C6530048ADE9 /* Garage */ = {
-			isa = PBXGroup;
-			children = (
-				D820808A270C8B8000D03B92 /* GarageViewController.swift */,
-				D8208084270C8B5E00D03B92 /* GaragePresenter.swift */,
-				D8208083270C8B5E00D03B92 /* GarageInteractor.swift */,
-				D8208082270C8B5E00D03B92 /* GarageConfigurator.swift */,
-				D8208085270C8B5E00D03B92 /* GarageRouter.swift */,
-			);
-			name = Garage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
