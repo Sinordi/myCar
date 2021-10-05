@@ -15,6 +15,8 @@ protocol DataManager {
 
 class DataManagerImplementation: DataManager {
     
+    
+    
     func obtainMarksOfCars() -> [String] {
         return ["Skoda", "Mitsubishi", "BMW", "Lada", "Audi", "Seat"]
     }

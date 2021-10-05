@@ -7,9 +7,11 @@
 
 import Foundation
 
+protocol NewCarConfiguratorInput: AnyObject {
+    func configure(with viewController: NewCarViewController)
+}
 
 class NewCarConfigurator: NewCarConfiguratorInput {
-    
     
     func configure(with viewController: NewCarViewController) {
         

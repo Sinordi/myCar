@@ -27,7 +27,7 @@ class CoreDataService: CoreDataInput {
     
     
     
-    var carItemArray = [Auto]()
+    var carItemArray = [Car]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -35,13 +35,13 @@ class CoreDataService: CoreDataInput {
     //Сохранение автомобиля в базу данных
     func saveNewCarItem(with auto: MainAuto) {
         
-        let carItem = Auto(context: context)
-        carItem.carBrand = auto.carBrand
-        carItem.carMileage = (auto.carMileage ?? 0)
-        carItem.carModel = auto.carModel
-        carItem.generation = auto.generation
-        carItem.trim = auto.trim
-        self.carItemArray.append(carItem)
+        let carItem = Car(context: context)
+            carItem.brand = auto.brand
+            carItem.mileage = (auto.mileage ?? 0)
+            carItem.model = auto.model
+            carItem.generation = auto.generation
+            carItem.trim = auto.trim
+//        self.carItemArray.append(carItem)
         self.saveAuto()
         print("Я сохранил новый автомобиль")
     }
@@ -72,7 +72,7 @@ class CoreDataService: CoreDataInput {
     
     //Метод загрузки данных из Core Data
     func loadAuto() {
-        let request: NSFetchRequest<Auto> = Auto.fetchRequest()
+        let request: NSFetchRequest<Car> = Car.fetchRequest()
         do {
             carItemArray = try context.fetch(request)
         } catch {

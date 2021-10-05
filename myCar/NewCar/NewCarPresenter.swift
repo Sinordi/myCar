@@ -7,11 +7,12 @@
 
 import Foundation
 
+protocol NewCarPresenterInput: AnyObject {
+
+}
 
 class NewCarPresenter: NewCarPresenterInput, NewCarViewDelegate, NewCarInteractorDelegate {
 
-    
-    
     private weak var view: NewCarViewInput!
     private let interactor: NewCarInteractorInput
     private let router: NewCarRouterInput

@@ -11,9 +11,9 @@ import Foundation
 //Структура, которая отображается на главном экране
 
 struct MainAuto {
-    var carBrand: String
-    var carModel: String
+    var brand: String
+    var model: String
     var generation: String?
     var trim: String?
-    var carMileage: Int32?
+    var mileage: Int32?
 }

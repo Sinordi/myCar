@@ -7,11 +7,18 @@
 
 import Foundation
 
+protocol NewCarInteractorInput: AnyObject {
+    func obtainArrayOfMarksOfCars() -> [String]
+    func addNewCar(carBrand: String, carModel: String, carType: String?, carGeneration: String?, carMileage: Int32)
+}
+
+protocol NewCarInteractorDelegate: AnyObject {
+    
+}
+
 
 class NewCarInteractor: NewCarInteractorInput {
 
-    
-    
     weak var delegate: NewCarInteractorDelegate?
     private let dataManager: DataManager
     private let coreDataService: CoreDataService
@@ -29,6 +36,6 @@ class NewCarInteractor: NewCarInteractorInput {
     }
     
     func addNewCar(carBrand: String, carModel: String, carType: String?, carGeneration: String?, carMileage: Int32) {
-        coreDataService.saveNewCarItem(with: MainAuto(carBrand: carBrand, carModel: carModel, generation: carGeneration, trim: carType, carMileage: carMileage))
+        coreDataService.saveNewCarItem(with: MainAuto(brand: carBrand, model: carModel, generation: carGeneration, trim: carType, mileage: carMileage))
     }
 }

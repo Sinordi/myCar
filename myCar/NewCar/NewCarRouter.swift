@@ -7,7 +7,9 @@
 
 import Foundation
 
-
+protocol NewCarRouterInput: AnyObject {
+    
+}
 
 class NewCarRouter: NewCarRouterInput {
 

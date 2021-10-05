@@ -10,6 +10,11 @@
 		D8015D4426FAF84600B0FC9E /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4326FAF84600B0FC9E /* CoreDataService.swift */; };
 		D8015D4626FAFD7D00B0FC9E /* MainAuto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */; };
 		D8015D4826FB193A00B0FC9E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4726FB193A00B0FC9E /* Service.swift */; };
+		D8208086270C8B5E00D03B92 /* GarageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208082270C8B5E00D03B92 /* GarageConfigurator.swift */; };
+		D8208087270C8B5E00D03B92 /* GarageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208083270C8B5E00D03B92 /* GarageInteractor.swift */; };
+		D8208088270C8B5E00D03B92 /* GaragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208084270C8B5E00D03B92 /* GaragePresenter.swift */; };
+		D8208089270C8B5E00D03B92 /* GarageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208085270C8B5E00D03B92 /* GarageRouter.swift */; };
+		D820808B270C8B8000D03B92 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D820808A270C8B8000D03B92 /* GarageViewController.swift */; };
 		D87FC88926FC6CC600D6533A /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */; };
 		D87FC88A26FC6CC600D6533A /* GarageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */; };
 		D881B44026F874850048ADE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B43F26F874850048ADE9 /* AppDelegate.swift */; };
@@ -23,26 +28,23 @@
 		D881B45F26F8773A0048ADE9 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B45E26F8773A0048ADE9 /* MainInteractor.swift */; };
 		D881B46126F8774E0048ADE9 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46026F8774E0048ADE9 /* MainConfigurator.swift */; };
 		D881B46326F877590048ADE9 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46226F877590048ADE9 /* MainRouter.swift */; };
-		D881B46526F877650048ADE9 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46426F877650048ADE9 /* MainProtocols.swift */; };
 		D881B46826F8987C0048ADE9 /* NewCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46726F8987C0048ADE9 /* NewCarController.swift */; };
 		D881B46A26F8988A0048ADE9 /* NewCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46926F8988A0048ADE9 /* NewCarPresenter.swift */; };
 		D881B46C26F898970048ADE9 /* NewCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46B26F898970048ADE9 /* NewCarInteractor.swift */; };
 		D881B46E26F898A80048ADE9 /* NewCarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */; };
 		D881B47026F898B40048ADE9 /* NewCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46F26F898B40048ADE9 /* NewCarRouter.swift */; };
-		D881B47226F898C20048ADE9 /* NewCarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47126F898C20048ADE9 /* NewCarProtocols.swift */; };
 		D881B47426F89D270048ADE9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47326F89D270048ADE9 /* DataManager.swift */; };
-		D881B47726F8C6880048ADE9 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47626F8C6880048ADE9 /* GarageViewController.swift */; };
-		D881B47926F8C6930048ADE9 /* GaragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47826F8C6930048ADE9 /* GaragePresenter.swift */; };
-		D881B47B26F8C6A20048ADE9 /* GarageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47A26F8C6A20048ADE9 /* GarageInteractor.swift */; };
-		D881B47D26F8C6AD0048ADE9 /* GarageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47C26F8C6AD0048ADE9 /* GarageConfigurator.swift */; };
-		D881B47F26F8C6B70048ADE9 /* GarageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47E26F8C6B70048ADE9 /* GarageRouter.swift */; };
-		D881B48126F8C6C60048ADE9 /* GarageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B48026F8C6C60048ADE9 /* GarageProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8015D4326FAF84600B0FC9E /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuto.swift; sourceTree = "<group>"; };
 		D8015D4726FB193A00B0FC9E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		D8208082270C8B5E00D03B92 /* GarageConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageConfigurator.swift; sourceTree = "<group>"; };
+		D8208083270C8B5E00D03B92 /* GarageInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageInteractor.swift; sourceTree = "<group>"; };
+		D8208084270C8B5E00D03B92 /* GaragePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaragePresenter.swift; sourceTree = "<group>"; };
+		D8208085270C8B5E00D03B92 /* GarageRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageRouter.swift; sourceTree = "<group>"; };
+		D820808A270C8B8000D03B92 /* GarageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
 		D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewCell.swift; sourceTree = "<group>"; };
 		D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GarageTableViewCell.xib; sourceTree = "<group>"; };
 		D881B43C26F874850048ADE9 /* myCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,20 +60,12 @@
 		D881B45E26F8773A0048ADE9 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		D881B46026F8774E0048ADE9 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
 		D881B46226F877590048ADE9 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		D881B46426F877650048ADE9 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		D881B46726F8987C0048ADE9 /* NewCarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarController.swift; sourceTree = "<group>"; };
 		D881B46926F8988A0048ADE9 /* NewCarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarPresenter.swift; sourceTree = "<group>"; };
 		D881B46B26F898970048ADE9 /* NewCarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarInteractor.swift; sourceTree = "<group>"; };
 		D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarConfigurator.swift; sourceTree = "<group>"; };
 		D881B46F26F898B40048ADE9 /* NewCarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarRouter.swift; sourceTree = "<group>"; };
-		D881B47126F898C20048ADE9 /* NewCarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarProtocols.swift; sourceTree = "<group>"; };
 		D881B47326F89D270048ADE9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		D881B47626F8C6880048ADE9 /* GarageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
-		D881B47826F8C6930048ADE9 /* GaragePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePresenter.swift; sourceTree = "<group>"; };
-		D881B47A26F8C6A20048ADE9 /* GarageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageInteractor.swift; sourceTree = "<group>"; };
-		D881B47C26F8C6AD0048ADE9 /* GarageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageConfigurator.swift; sourceTree = "<group>"; };
-		D881B47E26F8C6B70048ADE9 /* GarageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageRouter.swift; sourceTree = "<group>"; };
-		D881B48026F8C6C60048ADE9 /* GarageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +79,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D820807F270C89A100D03B92 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D881B44326F874850048ADE9 /* MainViewController.swift */,
+				D881B45C26F877280048ADE9 /* MainPresenter.swift */,
+				D881B45E26F8773A0048ADE9 /* MainInteractor.swift */,
+				D881B46026F8774E0048ADE9 /* MainConfigurator.swift */,
+				D881B46226F877590048ADE9 /* MainRouter.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D8208081270C89DF00D03B92 /* NewCar */ = {
+			isa = PBXGroup;
+			children = (
+				D881B46726F8987C0048ADE9 /* NewCarController.swift */,
+				D881B46926F8988A0048ADE9 /* NewCarPresenter.swift */,
+				D881B46B26F898970048ADE9 /* NewCarInteractor.swift */,
+				D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */,
+				D881B46F26F898B40048ADE9 /* NewCarRouter.swift */,
+			);
+			path = NewCar;
+			sourceTree = "<group>";
+		};
+		D820808D270C8CFB00D03B92 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D820808E270C8D2F00D03B92 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8015D4326FAF84600B0FC9E /* CoreDataService.swift */,
+				D8015D4726FB193A00B0FC9E /* Service.swift */,
+				D881B44826F874850048ADE9 /* AutoDataModel.xcdatamodeld */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D87FC88626FC6BD500D6533A /* GarageViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +153,8 @@
 				D881B44126F874850048ADE9 /* SceneDelegate.swift */,
 				D881B47326F89D270048ADE9 /* DataManager.swift */,
 				D881B45626F874BC0048ADE9 /* Modules */,
-				D881B45726F875070048ADE9 /* Entities */,
-				D881B45826F8751E0048ADE9 /* Services */,
+				D820808D270C8CFB00D03B92 /* Entities */,
+				D820808E270C8D2F00D03B92 /* Services */,
 				D881B45926F875290048ADE9 /* Views */,
 				D881B45A26F875340048ADE9 /* Storyboards */,
 				D881B44B26F874860048ADE9 /* Assets.xcassets */,
@@ -130,29 +166,11 @@
 		D881B45626F874BC0048ADE9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D881B45B26F875E30048ADE9 /* Main */,
+				D820807F270C89A100D03B92 /* Main */,
 				D881B47526F8C6530048ADE9 /* Garage */,
-				D881B46626F898530048ADE9 /* NewCar */,
+				D8208081270C89DF00D03B92 /* NewCar */,
 			);
 			name = Modules;
-			sourceTree = "<group>";
-		};
-		D881B45726F875070048ADE9 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */,
-			);
-			name = Entities;
-			sourceTree = "<group>";
-		};
-		D881B45826F8751E0048ADE9 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D8015D4326FAF84600B0FC9E /* CoreDataService.swift */,
-				D8015D4726FB193A00B0FC9E /* Service.swift */,
-				D881B44826F874850048ADE9 /* AutoDataModel.xcdatamodeld */,
-			);
-			name = Services;
 			sourceTree = "<group>";
 		};
 		D881B45926F875290048ADE9 /* Views */ = {
@@ -172,41 +190,14 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		D881B45B26F875E30048ADE9 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				D881B44326F874850048ADE9 /* MainViewController.swift */,
-				D881B45C26F877280048ADE9 /* MainPresenter.swift */,
-				D881B45E26F8773A0048ADE9 /* MainInteractor.swift */,
-				D881B46026F8774E0048ADE9 /* MainConfigurator.swift */,
-				D881B46226F877590048ADE9 /* MainRouter.swift */,
-				D881B46426F877650048ADE9 /* MainProtocols.swift */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
-		D881B46626F898530048ADE9 /* NewCar */ = {
-			isa = PBXGroup;
-			children = (
-				D881B46726F8987C0048ADE9 /* NewCarController.swift */,
-				D881B46926F8988A0048ADE9 /* NewCarPresenter.swift */,
-				D881B46B26F898970048ADE9 /* NewCarInteractor.swift */,
-				D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */,
-				D881B46F26F898B40048ADE9 /* NewCarRouter.swift */,
-				D881B47126F898C20048ADE9 /* NewCarProtocols.swift */,
-			);
-			name = NewCar;
-			sourceTree = "<group>";
-		};
 		D881B47526F8C6530048ADE9 /* Garage */ = {
 			isa = PBXGroup;
 			children = (
-				D881B47626F8C6880048ADE9 /* GarageViewController.swift */,
-				D881B47826F8C6930048ADE9 /* GaragePresenter.swift */,
-				D881B47A26F8C6A20048ADE9 /* GarageInteractor.swift */,
-				D881B47C26F8C6AD0048ADE9 /* GarageConfigurator.swift */,
-				D881B47E26F8C6B70048ADE9 /* GarageRouter.swift */,
-				D881B48026F8C6C60048ADE9 /* GarageProtocols.swift */,
+				D820808A270C8B8000D03B92 /* GarageViewController.swift */,
+				D8208084270C8B5E00D03B92 /* GaragePresenter.swift */,
+				D8208083270C8B5E00D03B92 /* GarageInteractor.swift */,
+				D8208082270C8B5E00D03B92 /* GarageConfigurator.swift */,
+				D8208085270C8B5E00D03B92 /* GarageRouter.swift */,
 			);
 			name = Garage;
 			sourceTree = "<group>";
@@ -282,32 +273,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D881B47226F898C20048ADE9 /* NewCarProtocols.swift in Sources */,
 				D8015D4826FB193A00B0FC9E /* Service.swift in Sources */,
 				D881B47426F89D270048ADE9 /* DataManager.swift in Sources */,
 				D8015D4626FAFD7D00B0FC9E /* MainAuto.swift in Sources */,
-				D881B47F26F8C6B70048ADE9 /* GarageRouter.swift in Sources */,
 				D881B45D26F877280048ADE9 /* MainPresenter.swift in Sources */,
 				D8015D4426FAF84600B0FC9E /* CoreDataService.swift in Sources */,
 				D881B47026F898B40048ADE9 /* NewCarRouter.swift in Sources */,
 				D881B46326F877590048ADE9 /* MainRouter.swift in Sources */,
-				D881B47926F8C6930048ADE9 /* GaragePresenter.swift in Sources */,
-				D881B47B26F8C6A20048ADE9 /* GarageInteractor.swift in Sources */,
-				D881B46526F877650048ADE9 /* MainProtocols.swift in Sources */,
 				D881B46826F8987C0048ADE9 /* NewCarController.swift in Sources */,
 				D881B46C26F898970048ADE9 /* NewCarInteractor.swift in Sources */,
 				D87FC88926FC6CC600D6533A /* GarageTableViewCell.swift in Sources */,
 				D881B44426F874850048ADE9 /* MainViewController.swift in Sources */,
-				D881B47726F8C6880048ADE9 /* GarageViewController.swift in Sources */,
 				D881B46E26F898A80048ADE9 /* NewCarConfigurator.swift in Sources */,
-				D881B47D26F8C6AD0048ADE9 /* GarageConfigurator.swift in Sources */,
 				D881B44026F874850048ADE9 /* AppDelegate.swift in Sources */,
+				D8208089270C8B5E00D03B92 /* GarageRouter.swift in Sources */,
 				D881B46A26F8988A0048ADE9 /* NewCarPresenter.swift in Sources */,
 				D881B44A26F874850048ADE9 /* AutoDataModel.xcdatamodeld in Sources */,
-				D881B48126F8C6C60048ADE9 /* GarageProtocols.swift in Sources */,
+				D8208086270C8B5E00D03B92 /* GarageConfigurator.swift in Sources */,
 				D881B46126F8774E0048ADE9 /* MainConfigurator.swift in Sources */,
+				D820808B270C8B8000D03B92 /* GarageViewController.swift in Sources */,
+				D8208088270C8B5E00D03B92 /* GaragePresenter.swift in Sources */,
 				D881B44226F874850048ADE9 /* SceneDelegate.swift in Sources */,
 				D881B45F26F8773A0048ADE9 /* MainInteractor.swift in Sources */,
+				D8208087270C8B5E00D03B92 /* GarageInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

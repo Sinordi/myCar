@@ -7,15 +7,14 @@
 
 import Foundation
 
+protocol GarageRouterInput: AnyObject {
+    func showNewCarViewController()
+}
+
 
 class GarageRouter: GarageRouterInput {
-    
 
-    
-    
 
-    
-    
     weak var GarageViewController: GarageViewController!
 
     weak var MainViewController: MainViewController!
@@ -35,7 +34,7 @@ class GarageRouter: GarageRouterInput {
     //TODO:- Реализовать метод, при котором обновляется segmented controll при удалении автомобиля из гаража
 
     func updateCarArrayInMainView(with carArray: [String]) {
-//        self.MainViewController.carArrayString = carArray
+//        self.MainViewController.carArrayString
         print("Я должен удалить из сегмент контрола")
     }
     

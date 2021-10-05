@@ -8,6 +8,15 @@
 import Foundation
 import UIKit
 
+protocol NewCarViewInput: AnyObject {
+    
+}
+
+protocol NewCarViewDelegate: AnyObject {
+    func viewIsReady()
+    func addNewCarButtonClicked(carBrand: String, carModel: String, carType: String?, carGeneration: String?, carMileage: Int32)
+}
+
 
 class NewCarViewController: UIViewController, NewCarViewInput {
     

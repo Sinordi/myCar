@@ -7,10 +7,11 @@
 
 import Foundation
 
+protocol MainConfiguratorInput: AnyObject {
+    func configure(with viewController: MainViewController)
+}
 
 class MainConfigurator {
-    
-    
     
     func configure(with viewController: MainViewController) {
         let router = MainRouter(viewController: viewController)
@@ -21,7 +22,5 @@ class MainConfigurator {
         viewController.delegate = presenter
         interactor.delegate = presenter
 
-    }
-    
-    
+    }  
 }

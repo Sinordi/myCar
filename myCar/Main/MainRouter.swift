@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol MainRouterInput: AnyObject {
+    
+}
+
 
 class MainRouter: MainRouterInput {
 

@@ -7,12 +7,14 @@
 
 import Foundation
 
+protocol GaragePresenterInput: AnyObject {
+    
+}
 
 class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteractorDelegate {
+    
+    
 
-    
-    
-   
     
 
     private weak var view: GarageViewInput!
@@ -31,9 +33,15 @@ class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteracto
         self.view.getCarArray(carArray: carArray)
         var carBrandArray: [String] = []
         for index in 0..<carArray.count {
-            carBrandArray.append(carArray[index].carBrand ?? "")
+            carBrandArray.append(carArray[index].brand ?? "")
         }
         self.view?.getCarArrayString(carArrayString: carBrandArray)
+    }
+    
+    func didLoadCars() {
+        
+        guard let carArray = interactor.carArray else {return}
+        self.view.getCarArray(carArray: carArray)
     }
 
     
@@ -43,10 +51,6 @@ class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteracto
     
     func removeCarFromGarageClicked(with indexPath: IndexPath) {
         interactor.deliteCarFromGarage(with: indexPath)
-    }
-    
-    func updateCarArrayInMainView(with carArray: [String]) {
-        router.updateCarArrayInMainView(with: carArray)
     }
     
     

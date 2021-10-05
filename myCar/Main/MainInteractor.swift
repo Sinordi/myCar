@@ -1,5 +1,5 @@
 //
-//  GarageInteractor.swift
+//  MainInteractor.swift
 //  myCar
 //
 //  Created by Сергей Кривошапко on 20.09.2021.
@@ -8,28 +8,34 @@
 import Foundation
 import CoreData
 
-
-protocol GarageInteractorInput: AnyObject {
+protocol MainInteractorInput: AnyObject {
+    
     var carArray: [Car]? {get}
-    func loadCarArray()
-    func deliteCarFromGarage(with indexPath: IndexPath)
+    var mainCar: Car? {get set}
+    func carMileageChange(mileage: Int32)
+    func loadMainCarItem()
+    func deliteFirstCar()
 }
 
-protocol GarageInteractorDelegate: AnyObject {
+protocol MainInteractorDelegate: AnyObject {
     func didLoadCars()
 }
 
-class GarageInteractor: NSObject, GarageInteractorInput {
-       
-    private let coreDataService: CoreDataService
-    weak var delegate: GarageInteractorDelegate?
+
+class MainInteractor: NSObject, MainInteractorInput {
+
+
+    private var actualValue2: Car?
     private var frConroller: NSFetchedResultsController<Car> = NSFetchedResultsController<Car>()
     
-  
-    init(coreDataService: CoreDataService) {
-        self.coreDataService = coreDataService
+    var mainCar: Car? {
+        set {
+             actualValue2 = newValue
+        }
+        get {
+            return coreDataService.carItemArray.first
+        }
     }
-    
     
     var carArray: [Car]? {
         get {
@@ -37,14 +43,29 @@ class GarageInteractor: NSObject, GarageInteractorInput {
         }
     }
     
-    func deliteCarFromGarage(with indexPath: IndexPath) {
-        coreDataService.removingCarWithIndex(with: indexPath)
+    weak var delegate: MainInteractorDelegate?
+    private let dataManager: DataManager
+    private let coreDataService: CoreDataService
+    
+  
+    init(dataManager: DataManager, coreDataService: CoreDataService) {
+        self.dataManager = dataManager
+        self.coreDataService = coreDataService
+
     }
     
-    func loadCarArray() {
+    func loadMainCarItem() {
         self.sibscribeToCarUpdates()
         coreDataService.loadAuto()
-        
+    }
+    
+    func deliteFirstCar() {
+        coreDataService.removingAllCarsFromCoreData()
+    }
+    
+    
+    func carMileageChange(mileage: Int32) {
+        mainCar?.mileage = mileage
     }
     
     private func sibscribeToCarUpdates() {
@@ -67,7 +88,7 @@ class GarageInteractor: NSObject, GarageInteractorInput {
     }
 }
 
-extension GarageInteractor: NSFetchedResultsControllerDelegate {
+extension MainInteractor: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         coreDataService.loadAuto()
