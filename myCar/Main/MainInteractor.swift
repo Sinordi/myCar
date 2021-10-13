@@ -14,7 +14,6 @@ protocol MainInteractorInput: AnyObject {
     var mainCar: Car? {get set}
     func carMileageChange(mileage: Int32)
     func loadMainCarItem()
-    func deliteFirstCar()
 }
 
 protocol MainInteractorDelegate: AnyObject {
@@ -24,34 +23,29 @@ protocol MainInteractorDelegate: AnyObject {
 
 class MainInteractor: NSObject, MainInteractorInput {
 
-
-    private var actualValue2: Car?
+    private var actualCar: Car?
     private var frConroller: NSFetchedResultsController<Car> = NSFetchedResultsController<Car>()
+    weak var delegate: MainInteractorDelegate?
+    private let coreDataService: CoreDataService
     
-    var mainCar: Car? {
-        set {
-             actualValue2 = newValue
-        }
-        get {
-            return coreDataService.carItemArray.first
-        }
+    init(coreDataService: CoreDataService) {
+        self.coreDataService = coreDataService
+
     }
-    
+
     var carArray: [Car]? {
         get {
             return coreDataService.carItemArray
         }
     }
     
-    weak var delegate: MainInteractorDelegate?
-    private let dataManager: DataManager
-    private let coreDataService: CoreDataService
-    
-  
-    init(dataManager: DataManager, coreDataService: CoreDataService) {
-        self.dataManager = dataManager
-        self.coreDataService = coreDataService
-
+    var mainCar: Car? {
+        set {
+             actualCar = newValue
+        }
+        get {
+            return coreDataService.carItemArray.first
+        }
     }
     
     func loadMainCarItem() {
@@ -59,15 +53,14 @@ class MainInteractor: NSObject, MainInteractorInput {
         coreDataService.loadAuto()
     }
     
-    func deliteFirstCar() {
-        coreDataService.removingAllCarsFromCoreData()
-    }
-    
     
     func carMileageChange(mileage: Int32) {
         mainCar?.mileage = mileage
+        
     }
     
+    
+    //Функция, необходимая для отслеживания изменений в CoreData
     private func sibscribeToCarUpdates() {
         let context = coreDataService.context
         let fetchRequest = NSFetchRequest<Car>(entityName: "Car")

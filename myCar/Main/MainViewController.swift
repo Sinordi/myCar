@@ -8,17 +8,15 @@
 import UIKit
 
 protocol MainViewInput: AnyObject {
-    func setMainCarOnMainView(auto: Car)
+
     func getCarArray(carArray: [Car])
     func getCarArrayString(carArray: [String])
-    
-//    func creatingSegmentedControl(wift array: [String])
+
 }
 
 protocol MainViewDelegate: AnyObject { //outPut
     func viewIsReady()
     func carMileageDidChange(carMileage: Int32)
-    func deliteFirstCarButtonClicked()
 }
 
 
@@ -47,12 +45,15 @@ class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
         delegate?.viewIsReady()
         creatingSegmentedControll(with: carArrayString)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        print(carArray)
+    }
     
     
     //MARK: - Segmented Controll
     func creatingSegmentedControll(with items: [String]) {
         self.carSegmentedControll = UISegmentedControl(items: items)
-        self.carSegmentedControll.frame = CGRect(x: 20, y: 550, width: (wight - 40), height: 30)
+        self.carSegmentedControll.frame = CGRect(x: 20, y: 50, width: (wight - 40), height: 30)
         self.view.addSubview(carSegmentedControll)
         carSegmentedControll.addTarget(self, action: #selector(carSegmentedControllDidChanche), for: .valueChanged)
     }
@@ -67,27 +68,50 @@ class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
     //Segmented Controll method
     @objc func carSegmentedControllDidChanche(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)
+        setMainCar(with: carArray, at: sender.selectedSegmentIndex)
     }
     
     
-    @IBAction func deliteButtonClicked(_ sender: UIButton) {
-        self.delegate?.deliteFirstCarButtonClicked()
-        self.delegate?.viewIsReady()
-    }
+    
+//    func setMainCarOnMainView(auto: Car) {
+//        autoTitle.text = (auto.brand ?? "") + " " + (auto.model ?? "")
+//        odometrLabel.text = "Пробег: " + String(auto.mileage) + " км"
+//    }
+    
+//    func setMainCarOnMainView1(with car: [Car], index: Int = 0) {
+//        autoTitle.text = (car[index].brand ?? "") + " " + (car[index].model ?? "")
+//        odometrLabel.text = "Пробег: " + String(car[index].mileage) + " км"
+//    }
     
     
-    func setMainCarOnMainView(auto: Car) {
-        autoTitle.text = (auto.brand ?? "") + " " + (auto.model ?? "")
-        odometrLabel.text = "Пробег: " + String(auto.mileage) + " км"
-    }
+    
     
     func getCarArray(carArray: [Car]) {
         self.carArray = carArray
+        self.setMainCar(with: carArray)
+        
     }
     
     func getCarArrayString(carArray: [String]) {
         self.carArrayString = carArray
+        carSegmentedControll.removeAllSegments()
 
+        carArrayString.enumerated().forEach { index, title in
+            carSegmentedControll.insertSegment(withTitle: title, at: index, animated: false)
+        }
+        
+        
+
+    }
+    func setMainCar(with car: [Car], at index: Int = 0) {
+        if car.count != 0 {
+            autoTitle.text = (car[index].brand ?? "") + " " + (car[index].model ?? "")
+            odometrLabel.text = "Пробег: " + String(car[index].mileage) + " км"
+        } else {
+            autoTitle.text = "Нет авто"
+            odometrLabel.text = "0"
+        }
+        
     }
 }
 

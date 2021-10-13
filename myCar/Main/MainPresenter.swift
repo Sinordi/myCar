@@ -26,17 +26,16 @@ class MainPresenter: MainPresenterInput, MainViewDelegate, MainInteractorDelegat
         self.router = router
     }
     
+    
     func viewIsReady() {
         
         //Добавление авто на главный экран
         interactor.loadMainCarItem()
-        guard let auto = interactor.mainCar else {return}
-        self.view?.setMainCarOnMainView(auto: auto)
-        
         
         //Создание массива брендов из существующих авто
         guard let carArray = interactor.carArray else {return}
         self.view?.getCarArray(carArray: carArray)
+        
         var carBrandArray: [String] = []
         for index in 0..<carArray.count {
             carBrandArray.append(carArray[index].brand ?? "")
@@ -45,8 +44,10 @@ class MainPresenter: MainPresenterInput, MainViewDelegate, MainInteractorDelegat
         
     }
     func didLoadCars() {
+
         guard let carArray = interactor.carArray else {return}
         self.view?.getCarArray(carArray: carArray)
+
         var carBrandArray: [String] = []
         for index in 0..<carArray.count {
             carBrandArray.append(carArray[index].brand ?? "")
@@ -56,14 +57,5 @@ class MainPresenter: MainPresenterInput, MainViewDelegate, MainInteractorDelegat
     
     func carMileageDidChange(carMileage: Int32) {
         interactor.carMileageChange(mileage: carMileage)
-
-        guard let auto = interactor.mainCar else {return}
-        self.view?.setMainCarOnMainView(auto: auto)
-    }
-    
-    func deliteFirstCarButtonClicked() {
-        print("Удалить элемент")
-        interactor.deliteFirstCar()
-        
     }
 }

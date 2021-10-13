@@ -15,7 +15,7 @@ class MainConfigurator {
     
     func configure(with viewController: MainViewController) {
         let router = MainRouter(viewController: viewController)
-        let interactor = MainInteractor(dataManager: DataManagerImplementation(), coreDataService: CoreDataService())
+        let interactor = MainInteractor(coreDataService: CoreDataService())
         let presenter = MainPresenter(view: viewController, interactor: interactor, router: router)
             
         viewController.presenter = presenter

@@ -8,33 +8,52 @@
 import Foundation
 
 protocol NewCarInteractorInput: AnyObject {
-    func obtainArrayOfMarksOfCars() -> [String]
+    var brands: [String]? {get}
+    var models: [String]? {get}
+    func obtainCarBrandsFromSQLDataBase()
+    func obtainCarModelsFromSQLDataBase(with brand: String)
     func addNewCar(carBrand: String, carModel: String, carType: String?, carGeneration: String?, carMileage: Int32)
 }
 
 protocol NewCarInteractorDelegate: AnyObject {
-    
+    func didObtainCarBrandsFromSQLDataBase()
+    func didObtainCarModelsFromSQLDataBase()
 }
 
 
 class NewCarInteractor: NewCarInteractorInput {
-
+    
     weak var delegate: NewCarInteractorDelegate?
-    private let dataManager: DataManager
+    private let sqliteDataService: SQLiteDataService
     private let coreDataService: CoreDataService
     
-    init(dataManager: DataManager, coreDataService: CoreDataService) {
-        self.dataManager = dataManager
+    var brands: [String]? {
+        get {
+            return sqliteDataService.brands
+        }
+    }
+    var models: [String]? {
+        get {
+            return sqliteDataService.models
+        }
+    }
+    
+    func obtainCarBrandsFromSQLDataBase() {
+        sqliteDataService.obtainCarBrands()
+        delegate?.didObtainCarBrandsFromSQLDataBase()
+    }
+    
+    func obtainCarModelsFromSQLDataBase(with brand: String) {
+        sqliteDataService.obtainCarModels(with: brand)
+        delegate?.didObtainCarModelsFromSQLDataBase()
+    }
+    
+    init(sqliteDataService: SQLiteDataService, coreDataService: CoreDataService) {
+        self.sqliteDataService = sqliteDataService
         self.coreDataService = coreDataService
     }
     
 
-    func obtainArrayOfMarksOfCars() -> [String] {
-        
-        let cars = dataManager.obtainMarksOfCars()
-        return cars
-    }
-    
     func addNewCar(carBrand: String, carModel: String, carType: String?, carGeneration: String?, carMileage: Int32) {
         coreDataService.saveNewCarItem(with: MainAuto(brand: carBrand, model: carModel, generation: carGeneration, trim: carType, mileage: carMileage))
     }

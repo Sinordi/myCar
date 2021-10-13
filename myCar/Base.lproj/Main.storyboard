@@ -41,47 +41,21 @@
                                     <action selector="carMileageDidChancheTextField:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="1HG-Oy-jZF"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW8-lK-bnS">
-                                <rect key="frame" x="336" y="470" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.60784313729999995" green="0.10980392160000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="deliteButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZMA-gx-xTu"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e6R-q8-7bF">
-                                <rect key="frame" x="20" y="64" width="374" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="o6k-0Q-6cj"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="R4O-Yz-4rm" firstAttribute="top" secondItem="Xdn-sK-NAr" secondAttribute="bottom" constant="28" id="27i-mW-v6q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TW8-lK-bnS" secondAttribute="trailing" constant="32" id="572-1d-lhE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="plb-Lh-m4S" secondAttribute="trailing" constant="5" id="8bU-Sb-dhq"/>
-                            <constraint firstItem="e6R-q8-7bF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8fP-Mf-Uhk"/>
                             <constraint firstItem="Xdn-sK-NAr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="JX4-X3-juC"/>
                             <constraint firstAttribute="trailing" secondItem="u9D-G9-Fvs" secondAttribute="trailing" constant="10" id="Jk0-mb-6xL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xdn-sK-NAr" secondAttribute="trailing" constant="10" id="NVm-Vn-kFF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R4O-Yz-4rm" secondAttribute="trailing" constant="10" id="R7x-AL-o0M"/>
-                            <constraint firstItem="TW8-lK-bnS" firstAttribute="top" secondItem="Xdn-sK-NAr" secondAttribute="bottom" constant="50" id="aWr-NU-FZl"/>
-                            <constraint firstItem="e6R-q8-7bF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bNv-iF-c0P"/>
                             <constraint firstItem="u9D-G9-Fvs" firstAttribute="top" secondItem="R4O-Yz-4rm" secondAttribute="bottom" constant="15" id="dua-0L-NI0"/>
                             <constraint firstItem="plb-Lh-m4S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="g4v-Pf-Zk5"/>
                             <constraint firstItem="Xdn-sK-NAr" firstAttribute="top" secondItem="plb-Lh-m4S" secondAttribute="bottom" constant="25" id="hVL-l5-qDo"/>
                             <constraint firstItem="R4O-Yz-4rm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jt1-xh-grS"/>
                             <constraint firstItem="u9D-G9-Fvs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kts-Y9-TAk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e6R-q8-7bF" secondAttribute="trailing" constant="20" id="pbi-YW-Pdv"/>
-                            <constraint firstItem="TW8-lK-bnS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="336" id="sAD-5f-i0d"/>
                             <constraint firstItem="plb-Lh-m4S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="87.5" id="tkm-iN-yXO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="plb-Lh-m4S" secondAttribute="bottom" constant="461" id="vIh-t1-VnP"/>
                         </constraints>
@@ -98,7 +72,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="autoTitle" destination="R4O-Yz-4rm" id="MjB-Bz-6nA"/>
-                        <outlet property="carsSegmentedControll" destination="e6R-q8-7bF" id="beG-Wc-zVH"/>
                         <outlet property="odometrLabel" destination="u9D-G9-Fvs" id="KRA-52-3gd"/>
                         <outlet property="odometrTextField" destination="Xdn-sK-NAr" id="fy7-1l-fxJ"/>
                     </connections>
@@ -175,7 +148,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ezb-Sv-4E5" firstAttribute="centerX" secondItem="1BA-yj-A3c" secondAttribute="centerX" id="2rW-XX-O1L"/>
-                            <constraint firstItem="1BA-yj-A3c" firstAttribute="trailing" secondItem="NVW-wk-FNP" secondAttribute="trailing" constant="35" id="4fz-Jb-H87"/>
+                            <constraint firstItem="1BA-yj-A3c" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NVW-wk-FNP" secondAttribute="trailing" id="4fz-Jb-H87"/>
                             <constraint firstItem="NVW-wk-FNP" firstAttribute="leading" secondItem="1BA-yj-A3c" secondAttribute="leading" constant="35" id="74Z-F4-dzK"/>
                             <constraint firstItem="NVW-wk-FNP" firstAttribute="top" secondItem="1BA-yj-A3c" secondAttribute="top" constant="45" id="EUM-Nk-uDq"/>
                             <constraint firstItem="VbQ-82-5iL" firstAttribute="top" secondItem="ezb-Sv-4E5" secondAttribute="bottom" constant="30" id="Erf-rg-XyL"/>

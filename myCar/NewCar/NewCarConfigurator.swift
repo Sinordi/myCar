@@ -15,7 +15,7 @@ class NewCarConfigurator: NewCarConfiguratorInput {
     
     func configure(with viewController: NewCarViewController) {
         
-        let interactor = NewCarInteractor(dataManager: DataManagerImplementation(), coreDataService: CoreDataService())
+        let interactor = NewCarInteractor(sqliteDataService: SQLiteDataService(), coreDataService: CoreDataService())
         let router = NewCarRouter(viewController: viewController)
         let presenter = NewCarPresenter(view: viewController, interactor: interactor, router: router)
 

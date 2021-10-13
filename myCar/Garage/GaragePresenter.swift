@@ -29,13 +29,7 @@ class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteracto
     
     func viewIsReady() {
         interactor.loadCarArray()
-        guard let carArray = interactor.carArray else {return}
-        self.view.getCarArray(carArray: carArray)
-        var carBrandArray: [String] = []
-        for index in 0..<carArray.count {
-            carBrandArray.append(carArray[index].brand ?? "")
-        }
-        self.view?.getCarArrayString(carArrayString: carBrandArray)
+
     }
     
     func didLoadCars() {

@@ -23,11 +23,13 @@ class GarageInteractor: NSObject, GarageInteractorInput {
        
     private let coreDataService: CoreDataService
     weak var delegate: GarageInteractorDelegate?
-    private var frConroller: NSFetchedResultsController<Car> = NSFetchedResultsController<Car>()
+    private var frConroller: NSFetchedResultsController<Car>?
     
   
     init(coreDataService: CoreDataService) {
         self.coreDataService = coreDataService
+        super.init()
+        self.sibscribeToCarUpdates()
     }
     
     
@@ -42,9 +44,8 @@ class GarageInteractor: NSObject, GarageInteractorInput {
     }
     
     func loadCarArray() {
-        self.sibscribeToCarUpdates()
         coreDataService.loadAuto()
-        
+        delegate?.didLoadCars()
     }
     
     private func sibscribeToCarUpdates() {
@@ -70,7 +71,6 @@ class GarageInteractor: NSObject, GarageInteractorInput {
 extension GarageInteractor: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        coreDataService.loadAuto()
-        delegate?.didLoadCars()
+        self.loadCarArray()
     }
 }

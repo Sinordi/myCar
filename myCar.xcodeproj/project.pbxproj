@@ -3,18 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2991EDE32BC6426DFDBDC019 /* Pods_myCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E6FA70B511A9A7B0C5514E /* Pods_myCar.framework */; };
 		D8015D4426FAF84600B0FC9E /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4326FAF84600B0FC9E /* CoreDataService.swift */; };
 		D8015D4626FAFD7D00B0FC9E /* MainAuto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */; };
-		D8015D4826FB193A00B0FC9E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8015D4726FB193A00B0FC9E /* Service.swift */; };
 		D8208086270C8B5E00D03B92 /* GarageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208082270C8B5E00D03B92 /* GarageConfigurator.swift */; };
 		D8208087270C8B5E00D03B92 /* GarageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208083270C8B5E00D03B92 /* GarageInteractor.swift */; };
 		D8208088270C8B5E00D03B92 /* GaragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208084270C8B5E00D03B92 /* GaragePresenter.swift */; };
 		D8208089270C8B5E00D03B92 /* GarageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208085270C8B5E00D03B92 /* GarageRouter.swift */; };
 		D820808B270C8B8000D03B92 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D820808A270C8B8000D03B92 /* GarageViewController.swift */; };
+		D82080B92715B64600D03B92 /* 1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82080B82715B64600D03B92 /* 1.swift */; };
+		D82080C02716BF7A00D03B92 /* cars.db in Resources */ = {isa = PBXBuildFile; fileRef = D82080BF2716BF7A00D03B92 /* cars.db */; };
 		D87FC88926FC6CC600D6533A /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */; };
 		D87FC88A26FC6CC600D6533A /* GarageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */; };
 		D881B44026F874850048ADE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B43F26F874850048ADE9 /* AppDelegate.swift */; };
@@ -33,18 +35,22 @@
 		D881B46C26F898970048ADE9 /* NewCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46B26F898970048ADE9 /* NewCarInteractor.swift */; };
 		D881B46E26F898A80048ADE9 /* NewCarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */; };
 		D881B47026F898B40048ADE9 /* NewCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B46F26F898B40048ADE9 /* NewCarRouter.swift */; };
-		D881B47426F89D270048ADE9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47326F89D270048ADE9 /* DataManager.swift */; };
+		D881B47426F89D270048ADE9 /* SQLiteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881B47326F89D270048ADE9 /* SQLiteDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CEBF906F564B85384FBDA71 /* Pods-myCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCar.release.xcconfig"; path = "Target Support Files/Pods-myCar/Pods-myCar.release.xcconfig"; sourceTree = "<group>"; };
+		4293351BA98FA0C9C9010662 /* Pods-myCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCar.debug.xcconfig"; path = "Target Support Files/Pods-myCar/Pods-myCar.debug.xcconfig"; sourceTree = "<group>"; };
+		77E6FA70B511A9A7B0C5514E /* Pods_myCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8015D4326FAF84600B0FC9E /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		D8015D4526FAFD7D00B0FC9E /* MainAuto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuto.swift; sourceTree = "<group>"; };
-		D8015D4726FB193A00B0FC9E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D8208082270C8B5E00D03B92 /* GarageConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageConfigurator.swift; sourceTree = "<group>"; };
 		D8208083270C8B5E00D03B92 /* GarageInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageInteractor.swift; sourceTree = "<group>"; };
 		D8208084270C8B5E00D03B92 /* GaragePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaragePresenter.swift; sourceTree = "<group>"; };
 		D8208085270C8B5E00D03B92 /* GarageRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageRouter.swift; sourceTree = "<group>"; };
 		D820808A270C8B8000D03B92 /* GarageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
+		D82080B82715B64600D03B92 /* 1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1.swift; sourceTree = "<group>"; };
+		D82080BF2716BF7A00D03B92 /* cars.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cars.db; sourceTree = "<group>"; };
 		D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewCell.swift; sourceTree = "<group>"; };
 		D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GarageTableViewCell.xib; sourceTree = "<group>"; };
 		D881B43C26F874850048ADE9 /* myCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +71,7 @@
 		D881B46B26F898970048ADE9 /* NewCarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarInteractor.swift; sourceTree = "<group>"; };
 		D881B46D26F898A80048ADE9 /* NewCarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarConfigurator.swift; sourceTree = "<group>"; };
 		D881B46F26F898B40048ADE9 /* NewCarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarRouter.swift; sourceTree = "<group>"; };
-		D881B47326F89D270048ADE9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D881B47326F89D270048ADE9 /* SQLiteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +79,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2991EDE32BC6426DFDBDC019 /* Pods_myCar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22B9C9916E0499BF4050D1BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4293351BA98FA0C9C9010662 /* Pods-myCar.debug.xcconfig */,
+				0CEBF906F564B85384FBDA71 /* Pods-myCar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4530EB0B8540899E9F9661FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77E6FA70B511A9A7B0C5514E /* Pods_myCar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D820807F270C89A100D03B92 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +138,9 @@
 		D820808E270C8D2F00D03B92 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D881B47326F89D270048ADE9 /* SQLiteDataService.swift */,
 				D8015D4326FAF84600B0FC9E /* CoreDataService.swift */,
-				D8015D4726FB193A00B0FC9E /* Service.swift */,
+				D82080B82715B64600D03B92 /* 1.swift */,
 				D881B44826F874850048ADE9 /* AutoDataModel.xcdatamodeld */,
 			);
 			path = Services;
@@ -145,8 +170,11 @@
 		D881B43326F874850048ADE9 = {
 			isa = PBXGroup;
 			children = (
+				D82080BF2716BF7A00D03B92 /* cars.db */,
 				D881B43E26F874850048ADE9 /* myCar */,
 				D881B43D26F874850048ADE9 /* Products */,
+				22B9C9916E0499BF4050D1BE /* Pods */,
+				4530EB0B8540899E9F9661FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,7 +191,6 @@
 			children = (
 				D881B43F26F874850048ADE9 /* AppDelegate.swift */,
 				D881B44126F874850048ADE9 /* SceneDelegate.swift */,
-				D881B47326F89D270048ADE9 /* DataManager.swift */,
 				D881B45626F874BC0048ADE9 /* Modules */,
 				D820808D270C8CFB00D03B92 /* Entities */,
 				D820808E270C8D2F00D03B92 /* Services */,
@@ -209,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D881B45326F874860048ADE9 /* Build configuration list for PBXNativeTarget "myCar" */;
 			buildPhases = (
+				D50FA670A95F9A08FA0D97C4 /* [CP] Check Pods Manifest.lock */,
 				D881B43826F874850048ADE9 /* Sources */,
 				D881B43926F874850048ADE9 /* Frameworks */,
 				D881B43A26F874850048ADE9 /* Resources */,
+				20F7F59D1CDABC7F2BE8DD2F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,18 +292,60 @@
 				D881B44C26F874860048ADE9 /* Assets.xcassets in Resources */,
 				D87FC88A26FC6CC600D6533A /* GarageTableViewCell.xib in Resources */,
 				D881B44726F874850048ADE9 /* Main.storyboard in Resources */,
+				D82080C02716BF7A00D03B92 /* cars.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20F7F59D1CDABC7F2BE8DD2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myCar/Pods-myCar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myCar/Pods-myCar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myCar/Pods-myCar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D50FA670A95F9A08FA0D97C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myCar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D881B43826F874850048ADE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8015D4826FB193A00B0FC9E /* Service.swift in Sources */,
-				D881B47426F89D270048ADE9 /* DataManager.swift in Sources */,
+				D881B47426F89D270048ADE9 /* SQLiteDataService.swift in Sources */,
 				D8015D4626FAFD7D00B0FC9E /* MainAuto.swift in Sources */,
 				D881B45D26F877280048ADE9 /* MainPresenter.swift in Sources */,
 				D8015D4426FAF84600B0FC9E /* CoreDataService.swift in Sources */,
@@ -296,6 +367,7 @@
 				D881B44226F874850048ADE9 /* SceneDelegate.swift in Sources */,
 				D881B45F26F8773A0048ADE9 /* MainInteractor.swift in Sources */,
 				D8208087270C8B5E00D03B92 /* GarageInteractor.swift in Sources */,
+				D82080B92715B64600D03B92 /* 1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +511,7 @@
 		};
 		D881B45426F874860048ADE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4293351BA98FA0C9C9010662 /* Pods-myCar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +532,7 @@
 		};
 		D881B45526F874860048ADE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CEBF906F564B85384FBDA71 /* Pods-myCar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

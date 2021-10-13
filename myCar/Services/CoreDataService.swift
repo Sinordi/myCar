@@ -12,20 +12,15 @@ import CoreData
 
 
 protocol CoreDataInput: AnyObject {
-    
-    
     func saveNewCarItem(with auto: MainAuto)
     func removingAllCarsFromCoreData()
     func removingCarWithIndex(with indexPath: IndexPath)
     func saveAuto()
     func loadAuto()
-    
 }
 
 
 class CoreDataService: CoreDataInput {
-    
-    
     
     var carItemArray = [Car]()
     
