@@ -10,22 +10,18 @@ import UIKit
 import CoreData
 
 
-
 protocol CoreDataInput: AnyObject {
     func saveNewCarItem(with auto: MainAuto)
     func removingAllCarsFromCoreData()
-    func removingCarWithIndex(with indexPath: IndexPath)
+    func removingCarWithIndex(with objectID: NSManagedObjectID)
     func saveAuto()
     func loadAuto()
 }
 
-
 class CoreDataService: CoreDataInput {
     
     var carItemArray = [Car]()
-    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
 
     //Сохранение автомобиля в базу данных
     func saveNewCarItem(with auto: MainAuto) {
@@ -36,7 +32,6 @@ class CoreDataService: CoreDataInput {
             carItem.model = auto.model
             carItem.generation = auto.generation
             carItem.trim = auto.trim
-//        self.carItemArray.append(carItem)
         self.saveAuto()
         print("Я сохранил новый автомобиль")
     }
@@ -50,9 +45,15 @@ class CoreDataService: CoreDataInput {
     }
     
     //Удаляет элемент с определенным индексом
-    func removingCarWithIndex(with indexPath: IndexPath) {
-        context.delete(carItemArray[indexPath.row])
+    func removingCarWithIndex(with objectID: NSManagedObjectID) {
+//        context.delete(carItemArray[index])
+        context.delete(context.object(with: objectID))
         saveAuto()
+    }
+    
+    func updatingCarMileage(mileage: Int32, index: Int) {
+        carItemArray[index].mileage = mileage
+        self.saveAuto()
     }
     
     //Метод сохранения контекста
@@ -73,8 +74,5 @@ class CoreDataService: CoreDataInput {
         } catch {
             print("Не удалось загрузить данные \(error)")
         }
-    }
-    
-    
-      
+    }    
 }

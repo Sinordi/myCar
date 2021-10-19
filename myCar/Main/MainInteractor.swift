@@ -12,12 +12,13 @@ protocol MainInteractorInput: AnyObject {
     
     var carArray: [Car]? {get}
     var mainCar: Car? {get set}
-    func carMileageChange(mileage: Int32)
-    func loadMainCarItem()
+    func carMileageChange(mileage: Int32, index: Int)
+//    func loadMainCarItem()
 }
 
 protocol MainInteractorDelegate: AnyObject {
     func didLoadCars()
+    func didUpdateMileage()
 }
 
 
@@ -30,11 +31,14 @@ class MainInteractor: NSObject, MainInteractorInput {
     
     init(coreDataService: CoreDataService) {
         self.coreDataService = coreDataService
+        super.init()
+        self.sibscribeToCarUpdates()
 
     }
 
     var carArray: [Car]? {
         get {
+            coreDataService.loadAuto()
             return coreDataService.carItemArray
         }
     }
@@ -48,15 +52,19 @@ class MainInteractor: NSObject, MainInteractorInput {
         }
     }
     
-    func loadMainCarItem() {
-        self.sibscribeToCarUpdates()
-        coreDataService.loadAuto()
-    }
+//    func loadMainCarItem() {
+//        coreDataService.loadAuto()
+//    }
     
-    
-    func carMileageChange(mileage: Int32) {
-        mainCar?.mileage = mileage
-        
+    //Изменение пробега + защита от скручивания (нельзя указать значение меньше, чем было)
+    func carMileageChange(mileage: Int32, index: Int) {
+        guard let oldValueOfMileage = carArray?[index].mileage else {return}
+        if oldValueOfMileage < mileage {
+            coreDataService.updatingCarMileage(mileage: mileage, index: index)
+            delegate?.didUpdateMileage()
+        } else {
+            return
+        }
     }
     
     

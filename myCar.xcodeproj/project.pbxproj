@@ -15,7 +15,6 @@
 		D8208088270C8B5E00D03B92 /* GaragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208084270C8B5E00D03B92 /* GaragePresenter.swift */; };
 		D8208089270C8B5E00D03B92 /* GarageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8208085270C8B5E00D03B92 /* GarageRouter.swift */; };
 		D820808B270C8B8000D03B92 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D820808A270C8B8000D03B92 /* GarageViewController.swift */; };
-		D82080B92715B64600D03B92 /* 1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82080B82715B64600D03B92 /* 1.swift */; };
 		D82080C02716BF7A00D03B92 /* cars.db in Resources */ = {isa = PBXBuildFile; fileRef = D82080BF2716BF7A00D03B92 /* cars.db */; };
 		D87FC88926FC6CC600D6533A /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */; };
 		D87FC88A26FC6CC600D6533A /* GarageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */; };
@@ -49,7 +48,6 @@
 		D8208084270C8B5E00D03B92 /* GaragePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaragePresenter.swift; sourceTree = "<group>"; };
 		D8208085270C8B5E00D03B92 /* GarageRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageRouter.swift; sourceTree = "<group>"; };
 		D820808A270C8B8000D03B92 /* GarageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
-		D82080B82715B64600D03B92 /* 1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1.swift; sourceTree = "<group>"; };
 		D82080BF2716BF7A00D03B92 /* cars.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cars.db; sourceTree = "<group>"; };
 		D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewCell.swift; sourceTree = "<group>"; };
 		D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GarageTableViewCell.xib; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			children = (
 				D881B47326F89D270048ADE9 /* SQLiteDataService.swift */,
 				D8015D4326FAF84600B0FC9E /* CoreDataService.swift */,
-				D82080B82715B64600D03B92 /* 1.swift */,
 				D881B44826F874850048ADE9 /* AutoDataModel.xcdatamodeld */,
 			);
 			path = Services;
@@ -158,13 +155,21 @@
 			path = Garage;
 			sourceTree = "<group>";
 		};
-		D87FC88626FC6BD500D6533A /* GarageViews */ = {
+		D83D3D26271F253700491BDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D83D3D27271F255100491BDF /* GarageViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D83D3D27271F255100491BDF /* GarageViews */ = {
 			isa = PBXGroup;
 			children = (
 				D87FC88726FC6CC600D6533A /* GarageTableViewCell.swift */,
 				D87FC88826FC6CC600D6533A /* GarageTableViewCell.xib */,
 			);
-			name = GarageViews;
+			path = GarageViews;
 			sourceTree = "<group>";
 		};
 		D881B43326F874850048ADE9 = {
@@ -194,7 +199,7 @@
 				D881B45626F874BC0048ADE9 /* Modules */,
 				D820808D270C8CFB00D03B92 /* Entities */,
 				D820808E270C8D2F00D03B92 /* Services */,
-				D881B45926F875290048ADE9 /* Views */,
+				D83D3D26271F253700491BDF /* Views */,
 				D881B45A26F875340048ADE9 /* Storyboards */,
 				D881B44B26F874860048ADE9 /* Assets.xcassets */,
 				D881B45026F874860048ADE9 /* Info.plist */,
@@ -210,14 +215,6 @@
 				D8208081270C89DF00D03B92 /* NewCar */,
 			);
 			name = Modules;
-			sourceTree = "<group>";
-		};
-		D881B45926F875290048ADE9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D87FC88626FC6BD500D6533A /* GarageViews */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		D881B45A26F875340048ADE9 /* Storyboards */ = {
@@ -367,7 +364,6 @@
 				D881B44226F874850048ADE9 /* SceneDelegate.swift in Sources */,
 				D881B45F26F8773A0048ADE9 /* MainInteractor.swift in Sources */,
 				D8208087270C8B5E00D03B92 /* GarageInteractor.swift in Sources */,
-				D82080B92715B64600D03B92 /* 1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

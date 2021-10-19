@@ -8,13 +8,9 @@
 import Foundation
 
 protocol MainPresenterInput: AnyObject {
-    
 }
 
-
 class MainPresenter: MainPresenterInput, MainViewDelegate, MainInteractorDelegate {
-
-    
 
     private weak var view: MainViewInput?
     private let interactor: MainInteractorInput
@@ -26,11 +22,10 @@ class MainPresenter: MainPresenterInput, MainViewDelegate, MainInteractorDelegat
         self.router = router
     }
     
-    
     func viewIsReady() {
         
         //Добавление авто на главный экран
-        interactor.loadMainCarItem()
+//        interactor.loadMainCarItem()
         
         //Создание массива брендов из существующих авто
         guard let carArray = interactor.carArray else {return}
@@ -41,8 +36,8 @@ class MainPresenter: MainPresenterInput, MainViewDelegate, MainInteractorDelegat
             carBrandArray.append(carArray[index].brand ?? "")
         }
         self.view?.getCarArrayString(carArray: carBrandArray)
-        
     }
+    
     func didLoadCars() {
 
         guard let carArray = interactor.carArray else {return}
@@ -55,7 +50,12 @@ class MainPresenter: MainPresenterInput, MainViewDelegate, MainInteractorDelegat
         self.view?.getCarArrayString(carArray: carBrandArray)
     }
     
-    func carMileageDidChange(carMileage: Int32) {
-        interactor.carMileageChange(mileage: carMileage)
+    func carMileageDidChange(carMileage: Int32, index: Int) {
+        interactor.carMileageChange(mileage: carMileage, index: index)
+    }
+    
+    func didUpdateMileage() {
+        guard let carArray = interactor.carArray else {return}
+        self.view?.getCarArray(carArray: carArray)
     }
 }

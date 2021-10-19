@@ -20,7 +20,7 @@ protocol NewCarViewDelegate: AnyObject {
 }
 
 
-class NewCarViewController: UIViewController, NewCarViewInput {
+class NewCarViewController: UIViewController, NewCarViewInput, UITextFieldDelegate {
 
 
     @IBOutlet weak var carBrandTextField: UITextField!
@@ -41,8 +41,16 @@ class NewCarViewController: UIViewController, NewCarViewInput {
         NewCarConfigurator().configure(with: self)
         delegate?.viewIsReady()
         creatingPickerViews()
+        carTypeTextField.delegate = self
+        carGenerationTextField.delegate = self
+        carMileageTextField.delegate = self
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        self.view.frame.origin.y -= 340
         
     }
+    
     
     func creatingPickerViews() {
         brandPickerView.dataSource = self
@@ -101,15 +109,17 @@ extension NewCarViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             carBrandTextField.text = brands[row]
             delegate?.carBrandDidChoose(with: brands[row])
             brandPickerView.resignFirstResponder()
+            self.view.endEditing(true)
             carModelTextField.isHidden = false
-            carTypeTextField.isHidden = false
-            carGenerationTextField.isHidden = false
-            carMileageTextField.isHidden = false
             print(models)
             
         } else if pickerView == modelPickerView {
             carModelTextField.text = models[row]
             modelPickerView.resignFirstResponder()
+            self.view.endEditing(true)
+            carTypeTextField.isHidden = false
+            carGenerationTextField.isHidden = false
+            carMileageTextField.isHidden = false
         }
     }
     

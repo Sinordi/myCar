@@ -12,7 +12,7 @@ import CoreData
 protocol GarageInteractorInput: AnyObject {
     var carArray: [Car]? {get}
     func loadCarArray()
-    func deliteCarFromGarage(with indexPath: IndexPath)
+    func deliteCarFromGarage(with objectID: NSManagedObjectID)
 }
 
 protocol GarageInteractorDelegate: AnyObject {
@@ -39,8 +39,8 @@ class GarageInteractor: NSObject, GarageInteractorInput {
         }
     }
     
-    func deliteCarFromGarage(with indexPath: IndexPath) {
-        coreDataService.removingCarWithIndex(with: indexPath)
+    func deliteCarFromGarage(with objectID: NSManagedObjectID) {
+        coreDataService.removingCarWithIndex(with: objectID)
     }
     
     func loadCarArray() {

@@ -6,16 +6,12 @@
 //
 
 import Foundation
+import CoreData
 
 protocol GaragePresenterInput: AnyObject {
-    
 }
 
 class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteractorDelegate {
-    
-    
-
-    
 
     private weak var view: GarageViewInput!
     private let interactor: GarageInteractorInput
@@ -29,11 +25,9 @@ class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteracto
     
     func viewIsReady() {
         interactor.loadCarArray()
-
     }
     
     func didLoadCars() {
-        
         guard let carArray = interactor.carArray else {return}
         self.view.getCarArray(carArray: carArray)
     }
@@ -43,11 +37,7 @@ class GaragePresenter: GaragePresenterInput, GarageViewDelegate, GarageInteracto
         router.showNewCarViewController()
     }
     
-    func removeCarFromGarageClicked(with indexPath: IndexPath) {
-        interactor.deliteCarFromGarage(with: indexPath)
+    func removeCarFromGarageClicked(with objectID: NSManagedObjectID) {
+        interactor.deliteCarFromGarage(with: objectID)
     }
-    
-    
-    
-    
 }

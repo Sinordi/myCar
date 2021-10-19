@@ -8,17 +8,14 @@
 import UIKit
 
 protocol MainViewInput: AnyObject {
-
     func getCarArray(carArray: [Car])
     func getCarArrayString(carArray: [String])
-
 }
 
 protocol MainViewDelegate: AnyObject { //outPut
     func viewIsReady()
-    func carMileageDidChange(carMileage: Int32)
+    func carMileageDidChange(carMileage: Int32, index: Int)
 }
-
 
 
 class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
@@ -26,14 +23,13 @@ class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
     @IBOutlet weak var autoTitle: UILabel!
     @IBOutlet weak var odometrTextField: UITextField!
     @IBOutlet weak var odometrLabel: UILabel!
-    
     @IBOutlet weak var carsSegmentedControll: UISegmentedControl!
     var carSegmentedControll = UISegmentedControl()
-
     var presenter: MainPresenterInput!
     weak var delegate: MainViewDelegate?
     private var carArray: [Car] = []
     var carArrayString: [String] = []
+    private var actualIndexOfCar: Int = 0
     
     let wight = UIScreen.main.bounds.size.width
     
@@ -45,11 +41,8 @@ class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
         delegate?.viewIsReady()
         creatingSegmentedControll(with: carArrayString)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        print(carArray)
-    }
     
-    
+
     //MARK: - Segmented Controll
     func creatingSegmentedControll(with items: [String]) {
         self.carSegmentedControll = UISegmentedControl(items: items)
@@ -61,8 +54,10 @@ class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
     
     //Изменение пробега
     @IBAction func carMileageDidChancheTextField(_ sender: UITextField) {
-        self.delegate?.carMileageDidChange(carMileage: (Int32(sender.text ?? "") ?? 0))
+        self.delegate?.carMileageDidChange(carMileage: (Int32(sender.text ?? "") ?? 0), index: actualIndexOfCar)
+        sender.text = ""
     }
+    
     
     
     //Segmented Controll method
@@ -71,25 +66,9 @@ class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
         setMainCar(with: carArray, at: sender.selectedSegmentIndex)
     }
     
-    
-    
-//    func setMainCarOnMainView(auto: Car) {
-//        autoTitle.text = (auto.brand ?? "") + " " + (auto.model ?? "")
-//        odometrLabel.text = "Пробег: " + String(auto.mileage) + " км"
-//    }
-    
-//    func setMainCarOnMainView1(with car: [Car], index: Int = 0) {
-//        autoTitle.text = (car[index].brand ?? "") + " " + (car[index].model ?? "")
-//        odometrLabel.text = "Пробег: " + String(car[index].mileage) + " км"
-//    }
-    
-    
-    
-    
     func getCarArray(carArray: [Car]) {
         self.carArray = carArray
-        self.setMainCar(with: carArray)
-        
+        self.setMainCar(with: carArray, at: actualIndexOfCar)
     }
     
     func getCarArrayString(carArray: [String]) {
@@ -103,8 +82,10 @@ class MainViewController: UIViewController, MainViewInput, UITextFieldDelegate {
         
 
     }
-    func setMainCar(with car: [Car], at index: Int = 0) {
+    
+    func setMainCar(with car: [Car], at index: Int) {
         if car.count != 0 {
+            actualIndexOfCar = index
             autoTitle.text = (car[index].brand ?? "") + " " + (car[index].model ?? "")
             odometrLabel.text = "Пробег: " + String(car[index].mileage) + " км"
         } else {

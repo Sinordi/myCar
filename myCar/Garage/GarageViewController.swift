@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol GarageViewInput: AnyObject {
     func getCarArray(carArray: [Car])
@@ -15,14 +16,12 @@ protocol GarageViewInput: AnyObject {
 
 protocol GarageViewDelegate: AnyObject {
     func viewIsReady()
-    func removeCarFromGarageClicked(with indexPath: IndexPath)
+    func removeCarFromGarageClicked(with objectID: NSManagedObjectID)
     func addNewCarButtonClicked()
-    
 }
 
 class GarageViewController: UIViewController, GarageViewInput {
-
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: GaragePresenterInput!
@@ -36,14 +35,7 @@ class GarageViewController: UIViewController, GarageViewInput {
         delegate?.viewIsReady()
         creatingTableView()
     }
-    
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        print("GarageViewDidAppear")
-//        GarageConfigurator().configure(with: self)
-//        delegate?.viewIsReady()
-//    }
-    
+
     func creatingTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -55,7 +47,6 @@ class GarageViewController: UIViewController, GarageViewInput {
         self.delegate?.addNewCarButtonClicked()    
     }
     
-    //TODO:- Переименовать или убрать этот функционал в другое место
     func getCarArray(carArray: [Car]) {
         self.carArray = carArray
         tableView.reloadData()
@@ -65,9 +56,6 @@ class GarageViewController: UIViewController, GarageViewInput {
         self.carArrayString = carArrayString
     }
 }
-
-
-
 
 extension GarageViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -88,10 +76,8 @@ extension GarageViewController: UITableViewDelegate, UITableViewDataSource {
     //MARK: - TableView Delegate methods
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        self.delegate?.removeCarFromGarageClicked(with: indexPath)
-//        self.carArray.remove(at: indexPath.row)
-//        self.carArrayString.remove(at: indexPath.row)
-//        tableView.reloadData()
+        let carObjectID = carArray[indexPath.row].objectID
+        self.delegate?.removeCarFromGarageClicked(with: carObjectID)
     }
 }
 
